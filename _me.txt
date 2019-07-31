@@ -1,0 +1,62 @@
+keytool -genkey -v -keystore ozone-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias
+yabaozoneapp
+hat is your first and last name?
+  [Unknown]:  Ozone
+What is the name of your organizational unit?
+  [Unknown]:  Cinemas
+What is the name of your organization?
+  [Unknown]:  Ozone Cinema
+What is the name of your City or Locality?
+  [Unknown]:  Lagos
+What is the name of your State or Province?
+  [Unknown]:  Lagos
+What is the two-letter country code for this unit?
+  [Unknown]:  NG
+Is CN=Ozone, OU=Cinemas, O=Ozone Cinema, L=Lagos, ST=Lagos, C=NG correct?
+  [no]:  y
+
+
+  keytool -exportcert -keystore ozone-release-key.jks -list -v
+Enter keystore password:
+Keystore type: jks
+Keystore provider: SUN
+
+Your keystore contains 1 entry
+
+Alias name: my-alias
+Creation date: Jul 27, 2019
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Ozone, OU=Cinemas, O=Ozone Cinema, L=Lagos, ST=Lagos, C=NG
+Issuer: CN=Ozone, OU=Cinemas, O=Ozone Cinema, L=Lagos, ST=Lagos, C=NG
+Serial number: 68bf5a5e
+Valid from: Sat Jul 27 10:41:31 WAT 2019 until: Wed Dec 12 10:41:31 WAT 2046
+Certificate fingerprints:
+         MD5:  DE:E3:F8:63:FC:20:29:4D:21:9F:C1:64:D9:E1:10:EA
+         SHA1: CB:5A:A3:05:65:1B:A3:A8:6F:1B:0A:93:BC:5B:7C:B0:EB:CB:67:09
+         SHA256: 84:01:74:BF:17:CC:4F:36:FD:1A:7A:B2:08:8F:72:92:EE:38:FF:11:B8:5E:F8:A7:F4:B7:FB:23:E1:1E:7F:00
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: B7 DF D7 E8 DB 97 59 C9   22 8A 7F FD 24 70 DB BF  ......Y."...$p..
+0010: 91 E7 C5 46                                        ...F
+]
+]
+
+
+
+*******************************************
+*******************************************
+
+
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore ozone-release-key.jks -destkeystore ozone-release-key.jks -deststoretype pkcs12".
+

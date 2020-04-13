@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View,
+  // View,
   Text,
   // Image,
   ScrollView,
@@ -14,6 +14,7 @@ import {
 import Home from '../components/Home/Home';
 import NowShowing from '../components/Home/NowShowing';
 import ComingSoon from '../components/Home/ComingSoon';
+import ShowMovie from '../components/Home/ShowMovie';
 
 import Profile from '../components/Profile';
 
@@ -44,7 +45,7 @@ const CustomNav = props => (
      </SafeAreaView>
   </ScrollView>
 )
-const HomeStack = createStackNavigator({ Home, NowShowing, ComingSoon });
+const HomeStack = createStackNavigator({ Home, NowShowing, ComingSoon, ShowMovie });
 const ProfileStack = createStackNavigator({ Profile });
 const AppStack = createDrawerNavigator(
   {

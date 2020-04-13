@@ -7,7 +7,7 @@ import getUser from '../../../selectors/UserSelectors';
 import NowShowing from '../NowShowing';
 import ComingSoon from '../ComingSoon';
 import TextStyles from '../../../helpers/TextStyles';
-// import Colors from '../../../helpers/Colors';
+import Colors from '../../../helpers/Colors';
 import styles from './styles';
 
 const initialLayout = {
@@ -57,7 +57,7 @@ class Home extends Component {
         onIndexChange={this._handleIndexChange}
         initialLayout={initialLayout}
         renderPager={props => <PagerScroll {...props} />}
-        //activeColor="red"
+        style={{backgroundColor: Colors.secondary}}
       />
     );
   }

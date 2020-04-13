@@ -10,12 +10,12 @@ import {
 import { Rating } from 'react-native-ratings';
 import TextStyles from '../../helpers/TextStyles';
 import Colors from '../../helpers/Colors';
-import Icons from 'react-native-vector-icons/FontAwesome';
+// import Icons from 'react-native-vector-icons/FontAwesome';
 
 const styles = StyleSheet.create({
   container: {
     height: 450,
-    width: 300,
+    width: '70%',
     marginBottom: 100,
     position: 'relative',
   },
@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     width: 200,
     backgroundColor: 'white',
     bottom: -70,
-    left: 50,
+    left: '50%',
+    translateX: -(200 / 2),
     borderTopLeftRadius: 20,
     borderBottomRightRadius: 20,
     shadowColor: Colors.darkGrey,

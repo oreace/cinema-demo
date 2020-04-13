@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   View,
-  // Text,
+  Text,
   ScrollView,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -13,20 +13,24 @@ import Movie from '../../common/Movie';
 // import strings from '../../../localization';
 import getUser from '../../../selectors/UserSelectors';
 // import Colors from '../../../helpers/Colors';
+import { withNavigation } from 'react-navigation';
 import styles from './styles';
 
 class NowShowing extends Component {
-  // static navigationOptions = {
-  //   header: null,
-  // };
-  // componentDidMount() {}
+
+  static navigationOptions = {
+    header: null,
+  };
+  componentDidMount() {}
   // link = () => this.props.navigation.navigate('Stalk');
 
   render() {
+    const { navigate } = this.props.navigation;
+    const { user } = this.props;
     return (
       <ScrollView>
         <View style={styles.container}>
-          <Movie onPress={()=>this.props.navigate('ShowMovie')}/>
+          <Movie onPress={()=>navigate('ShowMovie')}/>
           <Movie />
           <Movie />
           <Movie />
@@ -38,7 +42,7 @@ class NowShowing extends Component {
 
 NowShowing.propTypes = {
   user: PropTypes.object,
-  // navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 NowShowing.defaultProps = {
@@ -51,4 +55,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(NowShowing);
+export default withNavigation(connect(mapStateToProps, mapDispatchToProps)(NowShowing));
